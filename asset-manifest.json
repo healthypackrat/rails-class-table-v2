@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rails-class-table-v2/static/css/main.aad5da48.chunk.css",
-    "main.js": "/rails-class-table-v2/static/js/main.f000b6cc.chunk.js",
-    "main.js.map": "/rails-class-table-v2/static/js/main.f000b6cc.chunk.js.map",
+    "main.js": "/rails-class-table-v2/static/js/main.86adbf03.chunk.js",
+    "main.js.map": "/rails-class-table-v2/static/js/main.86adbf03.chunk.js.map",
     "runtime-main.js": "/rails-class-table-v2/static/js/runtime-main.740de0e0.js",
     "runtime-main.js.map": "/rails-class-table-v2/static/js/runtime-main.740de0e0.js.map",
     "static/css/2.0624914a.chunk.css": "/rails-class-table-v2/static/css/2.0624914a.chunk.css",
     "static/js/2.b9bd116e.chunk.js": "/rails-class-table-v2/static/js/2.b9bd116e.chunk.js",
     "static/js/2.b9bd116e.chunk.js.map": "/rails-class-table-v2/static/js/2.b9bd116e.chunk.js.map",
     "index.html": "/rails-class-table-v2/index.html",
-    "precache-manifest.89faaa64ddb6913f190aea0d8c63c5bb.js": "/rails-class-table-v2/precache-manifest.89faaa64ddb6913f190aea0d8c63c5bb.js",
+    "precache-manifest.5498d15c7e2d977110d09dbc05fb5980.js": "/rails-class-table-v2/precache-manifest.5498d15c7e2d977110d09dbc05fb5980.js",
     "service-worker.js": "/rails-class-table-v2/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/rails-class-table-v2/static/css/2.0624914a.chunk.css.map",
     "static/css/main.aad5da48.chunk.css.map": "/rails-class-table-v2/static/css/main.aad5da48.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.0624914a.chunk.css",
     "static/js/2.b9bd116e.chunk.js",
     "static/css/main.aad5da48.chunk.css",
-    "static/js/main.f000b6cc.chunk.js"
+    "static/js/main.86adbf03.chunk.js"
   ]
 }
