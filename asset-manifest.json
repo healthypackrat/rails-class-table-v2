@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/rails-class-table-v2/static/css/main.aad5da48.chunk.css",
-    "main.js": "/rails-class-table-v2/static/js/main.c8882fc4.chunk.js",
-    "main.js.map": "/rails-class-table-v2/static/js/main.c8882fc4.chunk.js.map",
+    "main.css": "/rails-class-table-v2/static/css/main.42d05314.chunk.css",
+    "main.js": "/rails-class-table-v2/static/js/main.33792d71.chunk.js",
+    "main.js.map": "/rails-class-table-v2/static/js/main.33792d71.chunk.js.map",
     "runtime-main.js": "/rails-class-table-v2/static/js/runtime-main.740de0e0.js",
     "runtime-main.js.map": "/rails-class-table-v2/static/js/runtime-main.740de0e0.js.map",
     "static/css/2.0624914a.chunk.css": "/rails-class-table-v2/static/css/2.0624914a.chunk.css",
     "static/js/2.fd9c27f1.chunk.js": "/rails-class-table-v2/static/js/2.fd9c27f1.chunk.js",
     "static/js/2.fd9c27f1.chunk.js.map": "/rails-class-table-v2/static/js/2.fd9c27f1.chunk.js.map",
     "index.html": "/rails-class-table-v2/index.html",
-    "precache-manifest.d914c464c2c2ab254fc7735f152b2e27.js": "/rails-class-table-v2/precache-manifest.d914c464c2c2ab254fc7735f152b2e27.js",
+    "precache-manifest.38c0199bed2a9f85d8e25b33e8ca357a.js": "/rails-class-table-v2/precache-manifest.38c0199bed2a9f85d8e25b33e8ca357a.js",
     "service-worker.js": "/rails-class-table-v2/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/rails-class-table-v2/static/css/2.0624914a.chunk.css.map",
-    "static/css/main.aad5da48.chunk.css.map": "/rails-class-table-v2/static/css/main.aad5da48.chunk.css.map"
+    "static/css/main.42d05314.chunk.css.map": "/rails-class-table-v2/static/css/main.42d05314.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.740de0e0.js",
     "static/css/2.0624914a.chunk.css",
     "static/js/2.fd9c27f1.chunk.js",
-    "static/css/main.aad5da48.chunk.css",
-    "static/js/main.c8882fc4.chunk.js"
+    "static/css/main.42d05314.chunk.css",
+    "static/js/main.33792d71.chunk.js"
   ]
 }
