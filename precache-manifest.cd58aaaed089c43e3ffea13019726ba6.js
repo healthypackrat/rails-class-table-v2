@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1361e71a7f3804d132d688ae512a722d",
+    "revision": "11a8bdf233eacc8691a677909f8bb7e4",
     "url": "/rails-class-table-v2/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rails-class-table-v2/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "5e2eb396a14a8018457e",
+    "revision": "40a23fd6281d9e153e86",
     "url": "/rails-class-table-v2/static/css/main.aad5da48.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rails-class-table-v2/static/js/2.fd9c27f1.chunk.js"
   },
   {
-    "revision": "5e2eb396a14a8018457e",
-    "url": "/rails-class-table-v2/static/js/main.3cacb621.chunk.js"
+    "revision": "40a23fd6281d9e153e86",
+    "url": "/rails-class-table-v2/static/js/main.f64471a3.chunk.js"
   },
   {
     "revision": "57ea7534ac7dc28b930f",
