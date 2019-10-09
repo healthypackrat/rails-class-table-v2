@@ -6,17 +6,17 @@ import { setSortKey } from '../actions';
 class TableHeaderCell extends React.Component {
   render() {
     const className = classnames({
-      'table-info': this.props.sortKey === this.props.sortKeyInState,
+      'table-info': this.props.sortable && (this.props.sortKey === this.props.sortKeyInState),
       'text-right': this.props.isNumber
-    }, this.props.sortOrders[this.props.sortKey] > 0 ? 'dropup' : 'dropdown');
+    }, this.props.sortable && (this.props.sortOrders[this.props.sortKey] > 0 ? 'dropup' : 'dropdown'));
     return (
       <th className={className}
         style={this.props.width ? {'width': this.props.width} : {}}
-        onClick={() => this.props.setSortKey(this.props.sortKey)}
+        onClick={() => this.props.sortable && this.props.setSortKey(this.props.sortKey)}
       >
         {this.props.label}
         {" "}
-        <span className="dropdown-toggle"></span>
+        {this.props.sortable && <span className="dropdown-toggle"></span>}
       </th>
     );
   }
