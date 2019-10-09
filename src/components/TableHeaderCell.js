@@ -7,7 +7,8 @@ class TableHeaderCell extends React.Component {
   render() {
     const className = classnames({
       'table-info': this.props.sortable && (this.props.sortKey === this.props.sortKeyInState),
-      'text-right': this.props.isNumber
+      'text-right': this.props.isNumber,
+      'pointer': this.props.sortable
     }, this.props.sortable && (this.props.sortOrders[this.props.sortKey] > 0 ? 'dropup' : 'dropdown'));
     return (
       <th className={className}
