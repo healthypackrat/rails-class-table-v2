@@ -11,7 +11,7 @@ const sortPriorities = {
 
 const initialState = {
   filterKey: '',
-  filteredEntries: entries.slice(),
+  filteredEntries: [],
   sortKey: 'class_desc',
   sortOrders: {
     class_name: 1,

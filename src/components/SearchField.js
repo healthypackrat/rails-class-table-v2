@@ -13,8 +13,6 @@ class SearchField extends React.Component {
 
     this.state = { input: params.q || '' };
 
-    this.props.setFilterKey(this.state.input);
-
     this.setFilterKey = _.debounce(() => {
       this.props.setFilterKey(this.state.input);
       this.pushHistory();
@@ -34,6 +32,11 @@ class SearchField extends React.Component {
 
   updateTitle = () => {
     document.title = this.state.input || 'rails-class-table-v2';
+  }
+
+  componentDidMount() {
+    this.props.setFilterKey(this.state.input);
+    this.updateTitle();
   }
 
   render() {
