@@ -39,7 +39,7 @@ class SearchField extends React.Component {
   render() {
     return (
       <div className="form-group">
-        <input type="search" className="form-control" placeholder="クラス名でフィルタ..." value={this.state.input} onChange={e => this.updateInput(e.target.value)} />
+        <input type="search" className="form-control" placeholder="クラス名で検索..." value={this.state.input} onChange={e => this.updateInput(e.target.value)} />
       </div>
     );
   }

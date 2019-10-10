@@ -1,4 +1,4 @@
-import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC } from './actionTypes';
+import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC, SET_USE_REGEXP } from './actionTypes';
 
 export const setFilterKey = filterKey => ({
   type: SET_FILTER_KEY,
@@ -18,5 +18,12 @@ export const setHideNoDoc = hideNoDoc => ({
   type: SET_HIDE_NO_DOC,
   payload: {
     hideNoDoc
+  }
+});
+
+export const setUseRegExp = useRegExp => ({
+  type: SET_USE_REGEXP,
+  payload: {
+    useRegExp
   }
 });

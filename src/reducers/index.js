@@ -1,4 +1,4 @@
-import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC } from '../actionTypes';
+import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC, SET_USE_REGEXP } from '../actionTypes';
 import entries from '../data/entries.json';
 
 const sortPriorities = {
@@ -20,13 +20,27 @@ const initialState = {
     method_desc: -1,
     total: -1
   },
-  hideNoDoc: true
+  hideNoDoc: true,
+  useRegExp: false
 };
 
 const filterEntries = state => {
   const sortPriority = sortPriorities[state.sortKey];
   return entries.filter(entry => {
-    return entry.class_name.toLowerCase().indexOf(state.filterKey.toLowerCase()) !== -1;
+    let useRegExp = state.useRegExp;
+    let pattern;
+    if (useRegExp) {
+      try {
+        pattern = new RegExp(state.filterKey, 'i');
+      } catch (e) {
+        useRegExp = false
+      }
+    }
+    if (useRegExp) {
+      return pattern.test(entry.class_name);
+    } else {
+      return entry.class_name.toLowerCase().indexOf(state.filterKey.toLowerCase()) !== -1;
+    }
   }).filter(entry => {
     if (state.hideNoDoc) {
       return entry.total !== 0;
@@ -78,6 +92,13 @@ export default (state = initialState, action) => {
       newState = {
         ...state,
         hideNoDoc: action.payload.hideNoDoc
+      }
+      newState.filteredEntries = filterEntries(newState);
+      return newState;
+    case SET_USE_REGEXP:
+      newState = {
+        ...state,
+        useRegExp: action.payload.useRegExp
       }
       newState.filteredEntries = filterEntries(newState);
       return newState;
