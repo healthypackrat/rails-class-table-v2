@@ -1,36 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import classnames from 'classnames';
-import { setSortKey } from '../actions';
 
-class TableHeaderCell extends React.Component {
-  render() {
-    const className = classnames({
-      'table-info': this.props.sortable && (this.props.sortKey === this.props.sortKeyInState),
-      'text-right': this.props.isNumber,
-      'pointer': this.props.sortable
-    }, this.props.sortable && (this.props.sortOrders[this.props.sortKey] > 0 ? 'dropup' : 'dropdown'));
-    return (
-      <th className={className}
-        style={this.props.width ? {'width': this.props.width} : {}}
-        onClick={() => this.props.sortable && this.props.setSortKey(this.props.sortKey)}
-      >
-        {this.props.label}
-        {" "}
-        {this.props.sortable && <span className="dropdown-toggle"></span>}
-      </th>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    sortKeyInState: state.sortKey,
-    sortOrders: state.sortOrders
-  };
+const TableHeaderCell = ({ label, isNumber, width }) => {
+  const className = classnames({ 'text-right': isNumber });
+  const style = { width: width };
+  return <th className={className} style={style}>{label}</th>;
 };
 
-export default connect(
-  mapStateToProps,
-  { setSortKey }
-)(TableHeaderCell);
+export default TableHeaderCell;
