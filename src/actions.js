@@ -1,4 +1,4 @@
-import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC, SET_USE_REGEXP } from './actionTypes';
+import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC, SET_USE_REGEXP, SET_INVERT_RESULT } from './actionTypes';
 
 export const setFilterKey = filterKey => ({
   type: SET_FILTER_KEY,
@@ -25,5 +25,12 @@ export const setUseRegExp = useRegExp => ({
   type: SET_USE_REGEXP,
   payload: {
     useRegExp
+  }
+});
+
+export const setInvertResult = invertResult => ({
+  type: SET_INVERT_RESULT,
+  payload: {
+    invertResult
   }
 });

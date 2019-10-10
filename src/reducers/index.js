@@ -1,4 +1,4 @@
-import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC, SET_USE_REGEXP } from '../actionTypes';
+import { SET_FILTER_KEY, SET_SORT_KEY, SET_HIDE_NO_DOC, SET_USE_REGEXP, SET_INVERT_RESULT } from '../actionTypes';
 import entries from '../data/entries.json';
 
 const sortPriorities = {
@@ -21,7 +21,8 @@ const initialState = {
     total: -1
   },
   hideNoDoc: true,
-  useRegExp: false
+  useRegExp: false,
+  invertResult: false
 };
 
 const filterEntries = state => {
@@ -29,6 +30,7 @@ const filterEntries = state => {
   return entries.filter(entry => {
     let useRegExp = state.useRegExp;
     let pattern;
+    let condition;
     if (useRegExp) {
       try {
         pattern = new RegExp(state.filterKey, 'i');
@@ -37,10 +39,11 @@ const filterEntries = state => {
       }
     }
     if (useRegExp) {
-      return pattern.test(entry.class_name);
+      condition = pattern.test(entry.class_name);
     } else {
-      return entry.class_name.toLowerCase().indexOf(state.filterKey.toLowerCase()) !== -1;
+      condition = entry.class_name.toLowerCase().indexOf(state.filterKey.toLowerCase()) !== -1;
     }
+    return state.invertResult ? !condition : condition;
   }).filter(entry => {
     if (state.hideNoDoc) {
       return entry.total !== 0;
@@ -99,6 +102,13 @@ export default (state = initialState, action) => {
       newState = {
         ...state,
         useRegExp: action.payload.useRegExp
+      }
+      newState.filteredEntries = filterEntries(newState);
+      return newState;
+    case SET_INVERT_RESULT:
+      newState = {
+        ...state,
+        invertResult: action.payload.invertResult
       }
       newState.filteredEntries = filterEntries(newState);
       return newState;

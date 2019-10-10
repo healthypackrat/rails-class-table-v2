@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchField from './SearchField';
 import UseRegExp from './UseRegExp';
+import InvertResult from './InvertResult';
 import HideNoDoc from './HideNoDoc';
 import ResultCount from './ResultCount';
 import Table from './Table';
@@ -13,6 +14,7 @@ export default function Main() {
       </p>
       <SearchField />
       <UseRegExp />
+      <InvertResult />
       <HideNoDoc />
       <ResultCount />
       <Table />
