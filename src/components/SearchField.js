@@ -20,8 +20,8 @@ class SearchField extends React.Component {
     }, 500);
   }
 
-  updateInput = input => {
-    this.setState({ input });
+  updateInput = event => {
+    this.setState({ input: event.target.value });
     this.setFilterKey();
   };
 
@@ -32,7 +32,7 @@ class SearchField extends React.Component {
 
   updateTitle = () => {
     document.title = this.state.input || 'rails-class-table-v2';
-  }
+  };
 
   componentDidMount() {
     this.props.setFilterKey(this.state.input);
@@ -42,7 +42,7 @@ class SearchField extends React.Component {
   render() {
     return (
       <div className="form-group">
-        <input type="search" className="form-control" placeholder="クラス名で検索..." value={this.state.input} onChange={e => this.updateInput(e.target.value)} />
+        <input type="search" className="form-control" placeholder="クラス名で検索..." value={this.state.input} onChange={this.updateInput} />
       </div>
     );
   }
