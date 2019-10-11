@@ -12,13 +12,13 @@ class SearchField extends React.Component {
     const params = qs.parse(props.location.search);
 
     this.state = { input: params.q || '' };
-
-    this.setFilterKey = _.debounce(() => {
-      this.props.setFilterKey(this.state.input);
-      this.pushHistory();
-      this.updateTitle();
-    }, 500);
   }
+
+  setFilterKey = _.debounce(() => {
+    this.props.setFilterKey(this.state.input);
+    this.pushHistory();
+    this.updateTitle();
+  }, 500);
 
   updateInput = event => {
     this.setState({ input: event.target.value });
