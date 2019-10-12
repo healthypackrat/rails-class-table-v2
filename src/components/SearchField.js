@@ -17,7 +17,6 @@ class SearchField extends React.Component {
   setFilterKey = _.debounce(() => {
     this.props.setFilterKey(this.state.input);
     this.pushHistory();
-    this.updateTitle();
   }, 500);
 
   updateInput = event => {
@@ -30,13 +29,8 @@ class SearchField extends React.Component {
     this.props.history.push(location);
   };
 
-  updateTitle = () => {
-    document.title = this.state.input || 'rails-class-table-v2';
-  };
-
   componentDidMount() {
     this.props.setFilterKey(this.state.input);
-    this.updateTitle();
   }
 
   render() {

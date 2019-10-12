@@ -1,12 +1,15 @@
 import React from 'react';
-import { createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './components/Main';
 import rootReducer from './reducers';
+import updateTitle from './middleware/updateTitle';
 
-const store = createStore(rootReducer, devToolsEnhancer());
+const middleware = [updateTitle];
+
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 export default function App() {
   return (
