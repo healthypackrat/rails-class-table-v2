@@ -1,11 +1,12 @@
 import React from 'react';
 import { createStore } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './components/Main';
 import rootReducer from './reducers';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, devToolsEnhancer());
 
 export default function App() {
   return (
