@@ -17,7 +17,7 @@ const Table = ({ filteredEntries }) => {
 };
 
 const mapStateToProps = state => {
-  return { filteredEntries: state.filteredEntries };
+  return { filteredEntries: state.entries.filteredEntries };
 };
 
 export default connect(

@@ -24,8 +24,8 @@ const SortableTableHeaderCell = ({ label, sortKey, isNumber, width, stateSortKey
 
 const mapStateToProps = state => {
   return {
-    stateSortKey: state.sortKey,
-    sortOrders: state.sortOrders
+    stateSortKey: state.entries.sortKey,
+    sortOrders: state.entries.sortOrders
   };
 };
 

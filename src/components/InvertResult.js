@@ -12,7 +12,7 @@ const InvertResult = ({ invertResult, setInvertResult }) => {
 };
 
 const mapStateToProps = state => {
-  return { invertResult: state.invertResult };
+  return { invertResult: state.entries.invertResult };
 };
 
 export default connect(

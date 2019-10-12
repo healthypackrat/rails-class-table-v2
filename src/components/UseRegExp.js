@@ -12,7 +12,7 @@ const UseRegExp = ({ useRegExp, setUseRegExp }) => {
 };
 
 const mapStateToProps = state => {
-  return { useRegExp: state.useRegExp };
+  return { useRegExp: state.entries.useRegExp };
 };
 
 export default connect(

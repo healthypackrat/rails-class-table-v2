@@ -8,7 +8,7 @@ const ResultCount = ({ count }) => {
 };
 
 const mapStateToProps = state => {
-  return { count: state.filteredEntries.length };
+  return { count: state.entries.filteredEntries.length };
 };
 
 export default connect(mapStateToProps)(ResultCount);

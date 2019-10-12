@@ -12,7 +12,7 @@ const HideNoDoc = ({ hideNoDoc, setHideNoDoc }) => {
 };
 
 const mapStateToProps = state => {
-  return { hideNoDoc: state.hideNoDoc };
+  return { hideNoDoc: state.entries.hideNoDoc };
 };
 
 export default connect(
