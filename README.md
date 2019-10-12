@@ -34,3 +34,7 @@ GitHub Pagesにデプロイ:
 ```
 $ npm run deploy
 ```
+
+## Misc
+
+  * [`src/data/entries.json`](src/data/entries.json)は[rails-class-table-data](https://github.com/healthypackrat/rails-class-table-data)で生成します。
