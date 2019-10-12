@@ -12,7 +12,7 @@
 
   * クラス名でフィルタリングできます
   * ヘッダをクリックしてソートできます
-  * 組み込みライブラリのみを表示するには、`Action|Active|Abstract|Rails`を入力して、**正規表現で検索**と**索結果を反転**をチェックします
+  * 組み込みライブラリのみを表示するには、[`Abstract|Action|Active|Rails`](https://healthypackrat.github.io/rails-class-table-v2/#/search?q=Abstract%7CAction%7CActive%7CRails)を入力して、**正規表現で検索**と**索結果を反転**をチェックします
 
 ## The Stack Used
 
@@ -37,4 +37,4 @@ $ npm run deploy
 
 ## Misc
 
-  * [`src/data/entries.json`](src/data/entries.json)は[rails-class-table-data](https://github.com/healthypackrat/rails-class-table-data)で生成します。
+  * [`src/data/entries.json`](src/data/entries.json)は[rails-class-table-data](https://github.com/healthypackrat/rails-class-table-data)で生成します
