@@ -12,7 +12,7 @@
 
   * クラス名でフィルタリングできます
   * ヘッダをクリックしてソートできます
-  * 組み込みライブラリのみを表示するには、[`Abstract|Action|Active|Rails`](https://healthypackrat.github.io/rails-class-table-v2/#/search?q=Abstract%7CAction%7CActive%7CRails)を入力して、**正規表現で検索**と**索結果を反転**をチェックします
+  * 組み込みライブラリのみを表示するには、[`Abstract|Action|Active|Rails`を入力して、**正規表現で検索**と**索結果を反転**をチェックします](https://healthypackrat.github.io/rails-class-table-v2/#/search?filterKey=Abstract%7CAction%7CActive%7CRails&hideNoDoc=true&invertResult=true&useRegExp=true)
 
 ## The Stack Used
 
