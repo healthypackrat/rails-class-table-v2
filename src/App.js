@@ -1,25 +1,32 @@
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
+import { createHashHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 import Main from './components/Main';
-import rootReducer from './reducers';
+import createRootReducer from './reducers';
+import parseLocation from './middleware/parseLocation';
 import updateTitle from './middleware/updateTitle';
+import updateLocation from './middleware/updateLocation';
 
-const middleware = [updateTitle];
+const history = createHashHistory();
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
+const middleware = [parseLocation, routerMiddleware(history), updateTitle, updateLocation];
+
+const store = createStore(createRootReducer(history), composeWithDevTools(applyMiddleware(...middleware)));
 
 export default function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <ConnectedRouter history={history}>
         <Switch>
           <Route path="/search" component={Main} />
           <Route path="/" exact component={Main} />
         </Switch>
-      </Router>
+      </ConnectedRouter>
     </Provider>
   );
 };

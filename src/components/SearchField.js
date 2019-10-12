@@ -1,37 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import { setFilterKey } from '../actions';
 const _ = require('lodash');
-const qs = require('query-string');
 
 class SearchField extends React.Component {
   constructor(props) {
     super(props);
 
-    const params = qs.parse(props.location.search);
-
-    this.state = { input: params.q || '' };
+    this.state = { input: this.props.filterKey };
   }
 
   setFilterKey = _.debounce(() => {
     this.props.setFilterKey(this.state.input);
-    this.pushHistory();
   }, 500);
 
   updateInput = event => {
     this.setState({ input: event.target.value });
     this.setFilterKey();
   };
-
-  pushHistory = () => {
-    const location = this.state.input ? `/search?${qs.stringify({ q: this.state.input })}` : '/';
-    this.props.history.push(location);
-  };
-
-  componentDidMount() {
-    this.props.setFilterKey(this.state.input);
-  }
 
   render() {
     return (
@@ -42,7 +28,11 @@ class SearchField extends React.Component {
   }
 }
 
-export default withRouter(connect(
-  null,
+const mapStateToProps = state => {
+  return { filterKey: state.entries.filterKey };
+};
+
+export default connect(
+  mapStateToProps,
   { setFilterKey }
-)(SearchField));
+)(SearchField);
