@@ -6,7 +6,7 @@ const InvertResult = ({ invertResult, setInvertResult }) => {
   return (
     <div className="form-check form-group">
       <input type="checkbox" id="invertResult" className="form-check-input" checked={invertResult} onChange={e => setInvertResult(e.target.checked)} />
-      <label className="form-check-label" htmlFor="invertResult">検索結果を反転</label>
+      <label className="form-check-label" htmlFor="invertResult">一致しないものを表示</label>
     </div>
   );
 };
