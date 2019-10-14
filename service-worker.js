@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rails-class-table-v2/precache-manifest.68784556835e3061eec5f5a51f2243bc.js"
+  "/rails-class-table-v2/precache-manifest.6806b5a4987fd5daf062f2202c3e071a.js"
 );
 
 self.addEventListener('message', (event) => {
