@@ -25,6 +25,21 @@ const initialState = {
   invertResult: false
 };
 
+const totalChars = entries.reduce((sum, entry) => sum + entry.total, 0);
+
+const setFilteredEntries = state => {
+  state.filteredEntries = filterEntries(state);
+  const filteredTotalChars = state.filteredEntries.reduce((sum, entry) => sum + entry.total, 0);
+  if (state.filteredEntries.length === entries.length) {
+    state.percentage = 100;
+  } else if (state.filteredEntries.length === 0) {
+    state.percentage = 0;
+  } else {
+    state.percentage = Math.round((filteredTotalChars / totalChars) * 10000) / 100;
+  }
+  return state;
+};
+
 const filterEntries = state => {
   const sortPriority = sortPriorities[state.sortKey];
   return entries.filter(entry => {
@@ -77,8 +92,7 @@ export default (state = initialState, action) => {
         ...state,
         filterKey: action.payload.filterKey
       };
-      newState.filteredEntries = filterEntries(newState);
-      return newState;
+      return setFilteredEntries(newState);
     case SET_SORT_KEY:
       const sortKey = action.payload.sortKey;
       const order = sortKey === state.sortKey ? -1 : 1;
@@ -89,29 +103,25 @@ export default (state = initialState, action) => {
         sortKey,
         sortOrders
       };
-      newState.filteredEntries = filterEntries(newState);
-      return newState;
+      return setFilteredEntries(newState);
     case SET_HIDE_NO_DOC:
       newState = {
         ...state,
         hideNoDoc: action.payload.hideNoDoc
       }
-      newState.filteredEntries = filterEntries(newState);
-      return newState;
+      return setFilteredEntries(newState);
     case SET_USE_REGEXP:
       newState = {
         ...state,
         useRegExp: action.payload.useRegExp
       }
-      newState.filteredEntries = filterEntries(newState);
-      return newState;
+      return setFilteredEntries(newState);
     case SET_INVERT_RESULT:
       newState = {
         ...state,
         invertResult: action.payload.invertResult
       }
-      newState.filteredEntries = filterEntries(newState);
-      return newState;
+      return setFilteredEntries(newState);
     default:
       return state
   }
