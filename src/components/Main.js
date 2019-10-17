@@ -20,4 +20,4 @@ export default function Main() {
       <Table />
     </div>
   );
-};
+}

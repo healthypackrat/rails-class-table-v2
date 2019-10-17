@@ -13,4 +13,4 @@ export default function TableHeaderRow() {
       <SortableTableHeaderCell label="合計" sortKey="total" isNumber={true} width="5em" />
     </tr>
   );
-};
+}

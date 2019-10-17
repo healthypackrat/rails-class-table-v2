@@ -5,6 +5,6 @@ import entries from './entries';
 const createRootReducer = (history) => combineReducers({
   router: connectRouter(history),
   entries
-})
+});
 
 export default createRootReducer;

@@ -53,7 +53,7 @@ const filterEntries = state => {
       try {
         pattern = new RegExp(state.filterKey, 'i');
       } catch (e) {
-        useRegExp = false
+        useRegExp = false;
       }
     }
     if (useRegExp) {
@@ -70,7 +70,7 @@ const filterEntries = state => {
     }
   }).sort((a, b) => {
     for (let i = 0; i < sortPriority.length; i++) {
-      const key = sortPriority[i]
+      const key = sortPriority[i];
       const x = a[key];
       const y = b[key];
       const order = state.sortOrders[key];
@@ -115,7 +115,7 @@ const on_SET_HIDE_NO_DOC = (state, action) => {
   const newState = {
     ...state,
     hideNoDoc: action.payload.hideNoDoc
-  }
+  };
   return setFilteredEntries(newState);
 };
 
@@ -123,7 +123,7 @@ const on_SET_USE_REGEXP = (state, action) => {
   const newState = {
     ...state,
     useRegExp: action.payload.useRegExp
-  }
+  };
   return setFilteredEntries(newState);
 };
 
@@ -131,7 +131,7 @@ const on_SET_INVERT_RESULT = (state, action) => {
   const newState = {
     ...state,
     invertResult: action.payload.invertResult
-  }
+  };
   return setFilteredEntries(newState);
 };
 
@@ -148,6 +148,6 @@ export default (state = initialState, action) => {
     case SET_INVERT_RESULT:
       return on_SET_INVERT_RESULT(state, action);
     default:
-      return state
+      return state;
   }
 };

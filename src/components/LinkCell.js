@@ -11,4 +11,4 @@ export default function LinkCell({ entry }) {
       >{entry.class_name}</a>
     </td>
   );
-};
+}

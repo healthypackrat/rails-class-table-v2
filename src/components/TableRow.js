@@ -13,4 +13,4 @@ export default function TableRow({ entry }) {
       <NumberCell number={entry.total} />
     </tr>
   );
-};
+}

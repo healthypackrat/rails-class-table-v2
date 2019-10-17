@@ -17,4 +17,4 @@ export default function configureStore(preloadedState) {
     preloadedState,
     composeWithDevTools(applyMiddleware(...middleware))
   );
-};
+}
