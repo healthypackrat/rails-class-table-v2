@@ -9,10 +9,13 @@ const sortPriorities = {
   total: ['total', 'method_desc', 'class_desc', 'method_count', 'class_name']
 };
 
+const defaultSortKey = 'class_desc';
+const validSortKeys = Object.keys(sortPriorities);
+
 const initialState = {
   filterKey: '',
   filteredEntries: [],
-  sortKey: 'class_desc',
+  sortKey: defaultSortKey,
   sortOrders: {
     class_name: 1,
     class_desc: -1,
@@ -94,8 +97,11 @@ export default (state = initialState, action) => {
       };
       return setFilteredEntries(newState);
     case SET_SORT_KEY:
-      const sortKey = action.payload.sortKey;
-      const order = sortKey === state.sortKey ? -1 : 1;
+      let sortKey = action.payload.sortKey;
+      if (!validSortKeys.includes(sortKey)) {
+        sortKey = defaultSortKey;
+      }
+      const order = (action.payload.reverse && sortKey === state.sortKey) ? -1 : 1;
       const sortOrders = {...state.sortOrders};
       sortOrders[sortKey] *= order;
       newState = {

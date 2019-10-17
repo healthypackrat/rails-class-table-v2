@@ -7,10 +7,11 @@ export const setFilterKey = filterKey => ({
   }
 });
 
-export const setSortKey = sortKey => ({
+export const setSortKey = (sortKey, reverse = true) => ({
   type: SET_SORT_KEY,
   payload: {
-    sortKey
+    sortKey,
+    reverse
   }
 });
 
