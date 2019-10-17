@@ -87,47 +87,66 @@ const filterEntries = state => {
   });
 };
 
+const on_SET_FILTER_KEY = (state, action) => {
+  const newState = {
+    ...state,
+    filterKey: action.payload.filterKey
+  };
+  return setFilteredEntries(newState);
+};
+
+const on_SET_SORT_KEY = (state, action) => {
+  let sortKey = action.payload.sortKey;
+  if (!validSortKeys.includes(sortKey)) {
+    sortKey = defaultSortKey;
+  }
+  const order = (action.payload.reverse && sortKey === state.sortKey) ? -1 : 1;
+  const sortOrders = {...state.sortOrders};
+  sortOrders[sortKey] *= order;
+  const newState = {
+    ...state,
+    sortKey,
+    sortOrders
+  };
+  return setFilteredEntries(newState);
+};
+
+const on_SET_HIDE_NO_DOC = (state, action) => {
+  const newState = {
+    ...state,
+    hideNoDoc: action.payload.hideNoDoc
+  }
+  return setFilteredEntries(newState);
+};
+
+const on_SET_USE_REGEXP = (state, action) => {
+  const newState = {
+    ...state,
+    useRegExp: action.payload.useRegExp
+  }
+  return setFilteredEntries(newState);
+};
+
+const on_SET_INVERT_RESULT = (state, action) => {
+  const newState = {
+    ...state,
+    invertResult: action.payload.invertResult
+  }
+  return setFilteredEntries(newState);
+};
+
 export default (state = initialState, action) => {
-  let newState;
   switch (action.type) {
     case SET_FILTER_KEY:
-      newState = {
-        ...state,
-        filterKey: action.payload.filterKey
-      };
-      return setFilteredEntries(newState);
+      return on_SET_FILTER_KEY(state, action);
     case SET_SORT_KEY:
-      let sortKey = action.payload.sortKey;
-      if (!validSortKeys.includes(sortKey)) {
-        sortKey = defaultSortKey;
-      }
-      const order = (action.payload.reverse && sortKey === state.sortKey) ? -1 : 1;
-      const sortOrders = {...state.sortOrders};
-      sortOrders[sortKey] *= order;
-      newState = {
-        ...state,
-        sortKey,
-        sortOrders
-      };
-      return setFilteredEntries(newState);
+      return on_SET_SORT_KEY(state, action);
     case SET_HIDE_NO_DOC:
-      newState = {
-        ...state,
-        hideNoDoc: action.payload.hideNoDoc
-      }
-      return setFilteredEntries(newState);
+      return on_SET_HIDE_NO_DOC(state, action);
     case SET_USE_REGEXP:
-      newState = {
-        ...state,
-        useRegExp: action.payload.useRegExp
-      }
-      return setFilteredEntries(newState);
+      return on_SET_USE_REGEXP(state, action);
     case SET_INVERT_RESULT:
-      newState = {
-        ...state,
-        invertResult: action.payload.invertResult
-      }
-      return setFilteredEntries(newState);
+      return on_SET_INVERT_RESULT(state, action);
     default:
       return state
   }
